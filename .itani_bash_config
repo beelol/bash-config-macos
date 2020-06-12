@@ -1,0 +1,193 @@
+bind '"[A":history-search-backward'
+bind '"[B":history-search-forward'
+
+# Add Visual Studio Code (code)
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Tells .rbenv where to store ruby versions
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH="/usr/local/bin:$PATH"
+
+# export PATH="/usr/local/Cellar/node/6.2.2"
+
+# Exposes the command line tools path to postgresql
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+# vs () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+# Runs a bash script to allow git
+
+source "$HOME/bash-config-macos/bash-scripts/list_containing_name.sh"
+
+source "$HOME/bash-config-macos/bash-scripts/list_starting_with_name.sh"
+
+source "$HOME/bash-config-macos/bash-scripts/git_ignore.sh"
+
+# allows for cloning by typing ghc {reponame}
+
+source "$HOME/bash-config-macos/bash-scripts/github_cloner.sh"
+
+source "$HOME/bash-config-macos/bash-scripts/github_cloner2.sh"
+
+# Various self-explanatory aliases
+
+alias edit='code'
+
+alias v='code'
+
+# Bash Profile Stuff
+
+alias bp='edit ~/.bash_profile'
+
+alias rbp='source ~/.bash_profile'
+
+alias l="ls -lah"
+
+# Git Commands
+
+alias gco="git checkout --ours"
+
+alias gct="git checkout --theirs"
+
+alias gcl="git clone"
+
+alias gi="gitignore"
+
+alias gm="git merge"
+
+alias gad="git add ."
+
+alias gaa="git add -A"
+
+alias s="git status"
+
+# old all version would show commits on other branches which i don't really wany
+# alias gl="git log --graph --oneline --all -n 10"
+alias gl="git log --graph --oneline -n 10"
+
+alias gcm='git commit -m'
+
+alias gsur='git submodule update --recursive'
+
+alias gclef='git clean -f'
+
+alias gclefd='git clean -fd'
+
+alias gst='git stash'
+
+# First time you clone, if there is a
+# submodule, ALWAYS call this immediately after
+
+alias gsuir='git submodule update --init --recursive'
+
+# Git Pushing
+
+alias gps="git push"
+
+alias pso="git push origin"
+
+alias psom="git push origin master"
+
+alias psoh="git push origin HEAD"
+
+# Git Pulling
+
+alias pu="git pull"
+
+alias puo="git pull origin"
+
+alias puom="git pull origin master"
+
+alias puoh="git pull origin HEAD"
+
+# Git Branching
+
+alias gc="git checkout"
+
+alias gbl="git branch --list"
+
+alias gb="git branch"
+
+# Heroku Deployment Commands
+
+alias hr="heroku run"
+
+# Rake Commands
+
+# Precompiles assets because heroku doesn't do it
+
+alias rap="rake assets:precompile"
+
+# Rake DB manipulation commands
+
+alias rdm="rake db:migrate"
+
+alias rds="rake db:setup"
+
+alias rdr="rake db:reset"
+
+alias rdsd="rake db:seed"
+
+# Ruby Bundler Gem Commands
+
+alias bi='bundle install'
+
+alias ber='bundle exec rspec'
+
+alias be='bundle exec'
+
+alias berml='bundle exec rake db:migrate db:test:load'
+
+# Rails generation controls
+
+alias rgm="rails generate model"
+
+alias rgmi="rails generate migration"
+
+alias rgc="rails generate controller"
+
+# Opens a new terminal in same directory
+
+# Typically used to create an idling terminal on the side
+
+alias termhere='open -a Terminal "`pwd`"'
+
+# NPM aliases
+
+alias npms='npm start'
+
+alias npmi='npm install'
+
+alias rnri='react-native run-ios'
+
+alias gd='git diff'
+
+alias rbs='git rebase'
+
+alias gr='git reset'
+
+UNITY_PROJECTS_PATH="$HOME/unityProjects"
+CARBON_RESET_PROJECT_PATH="$UNITY_PROJECTS_PATH/skrpg"
+CARBON_RESET_BUILD_PATH="$CARBON_RESET_PROJECT_PATH/Builds/skrpg.app/Contents/MacOS/skrpg"
+
+alias urcr="eval $CARBON_RESET_BUILD_PATH"
+
+alias cdcr="cd $CARBON_RESET_PROJECT_PATH"
+
+alias ga="git add"
+
+alias drb="git push origin --delete"
+
+alias guc="git reset --soft HEAD~1"
+
+alias nis="npm install && npm start"
