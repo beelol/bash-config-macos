@@ -39,6 +39,8 @@ source "$HOME/bash-config-macos/bash-scripts/github_cloner.sh"
 
 source "$HOME/bash-config-macos/bash-scripts/github_cloner2.sh"
 
+source "$HOME/bash-config-macos/bash-scripts/create-go-project.zsh"
+
 # Various self-explanatory aliases
 
 alias edit='code'
@@ -84,6 +86,9 @@ alias gclef='git clean -f'
 alias gclefd='git clean -fd'
 
 alias gst='git stash'
+
+# stash all including untracked
+alias gstu='git stash -u'
 
 # First time you clone, if there is a
 # submodule, ALWAYS call this immediately after
@@ -184,6 +189,8 @@ alias urcr="eval $CARBON_RESET_BUILD_PATH"
 
 alias cdcr="cd $CARBON_RESET_PROJECT_PATH"
 
+alias gf="git fetch"
+
 alias ga="git add"
 
 alias drb="git push origin --delete"
@@ -191,3 +198,26 @@ alias drb="git push origin --delete"
 alias guc="git reset --soft HEAD~1"
 
 alias nis="npm install && npm start"
+
+alias nid="rm -rf node_modules/ && npm install && npm run dev"
+
+alias y="yarn"
+
+alias greshm="git reset --hard origin/master"
+alias gresh="git reset --hard HEAD"
+alias gress="git reset --soft HEAD^1"
+
+alias eic="edit $HOME/bash-config-macos/.itani_bash_config"
+
+alias gdb="git diff master..."
+
+alias p="pnpm"
+
+alias ibc='edit ~/bash-config-macos/.itani_bash_config'
+
+alias pd='pnpm dev'
+alias yd='yarn dev'
+
+
+alias bmngo="brew services start mongodb-community@7.0"
+alias bmngstp="brew services stop mongodb-community@7.0"
