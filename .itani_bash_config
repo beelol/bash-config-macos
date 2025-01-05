@@ -41,6 +41,8 @@ source "$HOME/bash-config-macos/bash-scripts/github_cloner2.sh"
 
 source "$HOME/bash-config-macos/bash-scripts/create-go-project.zsh"
 
+source "$HOME/bash-config-macos/bash-scripts/fileize-ai-output.sh"
+
 # Various self-explanatory aliases
 
 alias edit='code'
