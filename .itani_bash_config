@@ -1,5 +1,11 @@
-bind '"[A":history-search-backward'
-bind '"[B":history-search-forward'
+# History search: Up/Down arrows search by line prefix (bash uses bind, zsh uses bindkey)
+if [ -n "$ZSH_VERSION" ]; then
+  bindkey '^[[A' history-beginning-search-backward
+  bindkey '^[[B' history-beginning-search-forward
+else
+  bind '"[A":history-search-backward'
+  bind '"[B":history-search-forward'
+fi
 
 # Add Visual Studio Code (code)
 
