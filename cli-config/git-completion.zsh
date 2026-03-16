@@ -30,9 +30,11 @@ _gf()  { _git_alias fetch "${words[@]:1}" }
 _gb()  { _git_alias branch "${words[@]:1}" }
 _rbs() { _git_alias rebase "${words[@]:1}" }
 _gr()  { _git_alias reset "${words[@]:1}" }
-_pso() { ((CURRENT++)); words=(git push origin "${words[@]:1}"); _git }
-_puo() { ((CURRENT++)); words=(git pull origin "${words[@]:1}"); _git }
-_drb() { ((CURRENT++)); words=(git push origin --delete "${words[@]:1}"); _git }
+# pso/puo: "git push/pull origin" = 3 words before user's arg → CURRENT += 2
+_pso() { ((CURRENT+=2)); words=(git push origin "${words[@]:1}"); _git }
+_puo() { ((CURRENT+=2)); words=(git pull origin "${words[@]:1}"); _git }
+# drb: "git push origin --delete" = 4 words before user's arg → CURRENT += 3
+_drb() { ((CURRENT+=3)); words=(git push origin --delete "${words[@]:1}"); _git }
 
 compdef _gc gc
 compdef _gps gps
