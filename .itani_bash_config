@@ -229,3 +229,10 @@ alias yd='yarn dev'
 
 alias bmngo="brew services start mongodb-community@7.0"
 alias bmngstp="brew services stop mongodb-community@7.0"
+
+# Zsh-only: CLI tweaks (completion for aliases, etc.) — sourced from cli-config/
+if [ -n "$ZSH_VERSION" ] && [ -d "$HOME/bash-config-macos/cli-config" ]; then
+  for f in "$HOME/bash-config-macos/cli-config"/*.zsh; do
+    [ -f "$f" ] && source "$f"
+  done
+fi
