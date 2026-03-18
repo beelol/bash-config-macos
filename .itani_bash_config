@@ -53,10 +53,12 @@ source "$HOME/bash-config-macos/bash-scripts/cdm.sh"
 
 # Various self-explanatory aliases
 
-
+# Editors
 alias v='code'
-
 alias c='/Applications/Cursor.app/Contents/Resources/app/bin/cursor'
+alias a='antigravity'
+
+# Assign Default Editor
 alias edit='v'
 
 # Bash Profile Stuff
@@ -65,6 +67,7 @@ alias eibc='edit ~/bash-config-macos'
 
 alias bp='edit ~/.bash_profile'
 alias rbp='source ~/.bash_profile'
+alias rzrc='source ~/.zshrc'
 
 alias zp='edit ~/.zprofile'
 alias rzp='source ~/.zprofile'
@@ -244,3 +247,7 @@ if [ -n "$ZSH_VERSION" ] && [ -d "$HOME/bash-config-macos/cli-config" ]; then
     [ -f "$f" ] && source "$f"
   done
 fi
+
+alias vid1p5x='ffmpeg -i "$1" -filter_complex "[0:v]setpts=0.6667*PTS[v];[0:a]atempo=1.5[a]" -map "[v]" -map "[a]?" "${1:r}_1p5x.mp4"'
+alias vid2x='ffmpeg -i "$1" -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]?" "${1:r}_2x.mp4"'
+alias vid4x='ffmpeg -i "$1" -filter_complex "[0:v]setpts=0.25*PTS[v];[0:a]atempo=4.0[a]" -map "[v]" -map "[a]?" "${1:r}_4x.mp4"'

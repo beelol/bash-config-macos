@@ -25,7 +25,7 @@ fileize_ai_output() {
     local buffer=""
     
     while IFS= read -r line || [ -n "$line" ]; do
-        if [[ $line =~ ^#[[:space:]]*([[:alnum:]/._-]+\.(py|go)) ]]; then
+        if [[ $line =~ ^(#|\/\/)[[:space:]]*([[:alnum:]/._-]+\.(py|go)) ]]; then
             if [ -n "$current_file" ] && [ -n "$buffer" ]; then
                 local target_dir="$base_path/$(dirname "$current_file")"
                 local target_file="$base_path/$current_file"
@@ -48,7 +48,7 @@ fileize_ai_output() {
                 echo "Created: $target_file"
             fi
             
-            current_file="${BASH_REMATCH[1]}"
+            current_file="${BASH_REMATCH[2]}"
             buffer=""
         else
             buffer+="$line"$'\n'
