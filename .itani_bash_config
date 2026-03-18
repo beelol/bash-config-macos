@@ -49,17 +49,25 @@ source "$HOME/bash-config-macos/bash-scripts/create-go-project.zsh"
 
 source "$HOME/bash-config-macos/bash-scripts/fileize-ai-output.sh"
 
+source "$HOME/bash-config-macos/bash-scripts/cdm.sh"
+
 # Various self-explanatory aliases
 
-alias edit='code'
 
 alias v='code'
 
+alias c='/Applications/Cursor.app/Contents/Resources/app/bin/cursor'
+alias edit='v'
+
 # Bash Profile Stuff
 
-alias bp='edit ~/.bash_profile'
+alias eibc='edit ~/bash-config-macos'
 
+alias bp='edit ~/.bash_profile'
 alias rbp='source ~/.bash_profile'
+
+alias zp='edit ~/.zprofile'
+alias rzp='source ~/.zprofile'
 
 alias l="ls -lah"
 
@@ -230,7 +238,7 @@ alias yd='yarn dev'
 alias bmngo="brew services start mongodb-community@7.0"
 alias bmngstp="brew services stop mongodb-community@7.0"
 
-# Zsh-only: CLI tweaks (completion for aliases, etc.) — sourced from cli-config/
+# Zsh-only: CLI tweaks (completion for aliases, etc.) � sourced from cli-config/
 if [ -n "$ZSH_VERSION" ] && [ -d "$HOME/bash-config-macos/cli-config" ]; then
   for f in "$HOME/bash-config-macos/cli-config"/*.zsh; do
     [ -f "$f" ] && source "$f"
