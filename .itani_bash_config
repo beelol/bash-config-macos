@@ -51,6 +51,8 @@ source "$HOME/bash-config-macos/bash-scripts/fileize-ai-output.sh"
 
 source "$HOME/bash-config-macos/bash-scripts/cdm.sh"
 
+source "$HOME/bash-config-macos/bash-scripts/brdiff.sh"
+
 # Various self-explanatory aliases
 
 # Editors
